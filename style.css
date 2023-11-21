@@ -3,7 +3,7 @@
     margin: 2px;
     box-sizing: border-box;
     user-select: none;
-    border: red 2px solid;
+    /* border: red 2px solid; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
 }
@@ -39,7 +39,7 @@ body {
 
     .date-container {
 
-        border: 4px solid red;
+        /* border: 4px solid red; */
         height: 60px;
         width: 80%;
         margin: 12px 0 12px 0;
@@ -51,7 +51,7 @@ body {
 
         & input {
 
-            border: 4px solid green;
+            /* border: 4px solid green; */
             height: 80%;
             width: 80%;
 
@@ -66,9 +66,9 @@ body {
 }
 
 #outbound-input {
-    background: rgba(255, 0, 0, 0.568);
+    /* background: rgba(255, 0, 0, 0.568); */
 }
 
 #return-input {
-    background: rgba(0, 128, 0, 0.526);
+    /* background: rgba(0, 128, 0, 0.526); */
 }
