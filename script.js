@@ -15,7 +15,7 @@ const priceEvaluation = function () {
     let days = returnParse - outboundParse;
     console.log("d" + returnParse, "a" + outboundParse);
 
-    price.textContent = (days / (1000 * 60 * 60 * 24)) * 34;
+    price.textContent = ((days / (1000 * 60 * 60 * 24)) * 34) + "€";
 }
 
 // Transform a ISO date in date formated for our input date
