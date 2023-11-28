@@ -6,14 +6,14 @@ const priceEvaluation = function () {
 
     let priceDateOutbound = new Date(outboundInput.value);
     let outboundParse = priceDateOutbound.getTime();
-    console.log(priceDateOutbound, outboundParse);
+    // console.log(priceDateOutbound, outboundParse);
 
     let priceDateReturn = new Date(returnInput.value);
     let returnParse = priceDateReturn.getTime();
-    console.log(priceDateReturn, returnParse);
+    // console.log(priceDateReturn, returnParse);
 
     let days = returnParse - outboundParse;
-    console.log("d" + returnParse, "a" + outboundParse);
+    // console.log("d" + returnParse, "a" + outboundParse);
 
     price.textContent = ((days / (1000 * 60 * 60 * 24)) * 34) + "€";
 }
@@ -53,7 +53,6 @@ outboundInput.addEventListener('change', (e) => {
     } else if (outboundInput.value >= returnInput.value) {
         returnInput.value = formatDate(outboundDatePlusOne);
     }
-
     priceEvaluation()
 });
 
@@ -62,14 +61,19 @@ outboundInput.addEventListener('change', (e) => {
 returnInput.addEventListener('change', (e) => {
     const returnDate = new Date(e.target.value);
 
-    const returnDateMinusOne = new Date(e.target.value);
-    returnDateMinusOne.setDate(returnDateMinusOne.getDate() - 1);
 
     if (returnDate <= currentDatePlusOne) {
         returnInput.value = formatDate(currentDatePlusOne);
-    } else if (returnInput.value <= outboundInput.value) {
-        outboundInput.value = formatDate(returnDateMinusOne);
+        outboundInput.value = formatDate(currentDate);
+        console.log("1")
     }
+    else if (returnInput.value <= outboundInput.value) {
+        const returnDateMinusOne = new Date(e.target.value);
+        returnDateMinusOne.setDate(returnDateMinusOne.getDate() - 1);
+        outboundInput.value = formatDate(returnDateMinusOne);
+        console.log("2")
+    }
+
 
     priceEvaluation()
 });
