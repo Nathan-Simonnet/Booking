@@ -1,6 +1,7 @@
 :root {
 
-    --text-background-color: rgba(255, 255, 255, 0.46);
+    --block-color: rgba(214, 213, 213, 0.647);
+    --input-background-color: rgb(228, 226, 226);
 }
 
 * {
@@ -24,7 +25,6 @@ body {
     background: url(doc/Background.jpg) center/cover;
 }
 
-
 .card {
 
     display: flex;
@@ -32,23 +32,19 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: rgba(255, 255, 255, 0.626);
-    box-shadow: 2px 2px 6px 2px rgba(128, 128, 128, 0.262);
+    background: var(--block-color);
+    box-shadow: 2px 2px 6px 2px rgba(128, 128, 128, 0.434);
     backdrop-filter: blur(2px);
     border-radius: 20px;
 
-    height: 440px;
+    height: 400px;
     width: 400px;
-
-    & h1 {
-
-        margin: 0 0 30px 0;
-    }
 
     & .price-container {
         & p {
+            margin-bottom: 24px;
+            font-size: 1.6em;
             font-weight: bold;
-            font-size: 1.4em;
 
             & span {
                 font-weight: initial;
@@ -57,13 +53,12 @@ body {
     }
 }
 
-
 /* Not nested for more clarity and avoiding conflicts */
-
 .date-container {
     height: 100px;
     width: 100%;
     margin: 12px 0 12px 0;
+
 
     display: flex;
     flex-direction: column;
@@ -72,19 +67,18 @@ body {
 
     font-weight: bold;
 
-
     & input {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         height: 40px;
         width: 60%;
         border-radius: 8px;
 
-        background: rgb(228, 226, 226);
         font-size: 1em;
         letter-spacing: 2px;
+
+        background: var(--input-background-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
     }
 
@@ -94,7 +88,7 @@ body {
         justify-content: center;
         align-items: center;
 
-        background: rgba(255, 255, 255, 0.46);
+        background: var(--block-color);
 
         width: 100%;
         height: 40px;
